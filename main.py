@@ -1,14 +1,12 @@
-import collections
-
+import sys
 
 def main():
+    
+    sys.argv 
     with open("books/frankenstien.txt") as f:
         file_contents = f.read()
-        
         print("Start of Report!")
-        
         word_count(file_contents)
-        
         print_report(character_count(file_contents))
         
 def word_count(text: str):
@@ -18,7 +16,7 @@ def word_count(text: str):
 def character_count(text: str):
     lowered_string = text.lower()
     letters = {}
-        
+    
     for character in lowered_string:
         if (character not in letters):
             letters [character] = {"character": character , "count": 0 }
@@ -36,7 +34,7 @@ def print_report(dict: dict):
     print("--- End Report ---")
     
 def sort_on(dict):
-    return dict["count"]
-               
-               
+    return dict["count"]     
+
+
 main()
